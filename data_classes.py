@@ -23,6 +23,6 @@ class Post(Base):
     id =        Column(Integer, primary_key=True, index=True, unique=True)
     title =     Column(String)
     content =   Column(Text)
-    user_id =   Column(Integer,ForeignKey('Users.id'))
+    user_id =   Column(Integer, ForeignKey('Users.id'))
 
     users = relationship('User', back_populates='posts')
