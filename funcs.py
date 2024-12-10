@@ -3,7 +3,7 @@
 from random import randint
 import data_classes as dc
 
-def username_generator(dl = 16):
+def string_generator(dl = 16):
     '''Generates a unique username of a random length'''
 
     def generate(length, lis):
@@ -18,6 +18,7 @@ def username_generator(dl = 16):
             'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     spec = ['!', '#', '$', '&', '%']
+    
     n_len = randint(5, dl)  # length of the username
 
     symb_a = randint(0, n_len)

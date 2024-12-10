@@ -20,11 +20,11 @@ base.Base.metadata.create_all(bind=engine)
 SessionLocal = sessionmaker(autoflush=False, bind=engine)
 db = SessionLocal()
 
-un = f.username_generator()
+un = f.string_generator()
 while not f.check_availiability(un, db):
-    un = f.username_generator()
+    un = f.string_generator()
 em = un + '@mail.ru'
-pw = hash('1236')
+pw = hash(f.string_generator(15))
 
 user = dc.User(username=un, email=em, password=pw)
 db.add(user)
