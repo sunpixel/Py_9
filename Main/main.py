@@ -5,9 +5,9 @@ from fastapi import FastAPI
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-import funcs as f
-import base_class as base
-import data_classes as dc
+import Main.funcs as f
+import Main.base_class as base
+import Main.data_classes as dc
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./Test.db"
 

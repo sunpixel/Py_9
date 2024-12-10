@@ -1,7 +1,7 @@
 '''Base functions fro program'''
 
 from random import randint
-import data_classes as dc
+import Main.data_classes as dc
 
 def string_generator(dl = 16):
     '''Generates a unique username of a random length'''
