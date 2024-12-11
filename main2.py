@@ -1,5 +1,7 @@
 '''Main file for an endpoint'''
 
+# pylint: disable=C0301
+
 from fastapi import FastAPI, Form, HTTPException
 from fastapi.responses import HTMLResponse, FileResponse, RedirectResponse, JSONResponse
 from sqlalchemy import create_engine, exc
@@ -7,7 +9,7 @@ from sqlalchemy.orm import sessionmaker, joinedload
 
 from Main import base_class as base
 from Main import data_classes as dc
-from Main import funcs as f
+#from Main import funcs as f
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./Test.db"
 
@@ -35,7 +37,7 @@ def get_create_post_form(user_id: int):
 
 def create_post_html(user_id: int, posts_data: list):
     '''Function that generates the create post HTML with existing posts'''
-    with open("static/create_post.html", "r") as file:
+    with open("static/create_post.html", "r", encoding='UTF-8') as file:    # set encoding for specifi value
         html_content = file.read()
     posts_html = "".join(
         f"<div class='post'><h3>{post['username']}</h3><h4>{post['title']}</h4><p>{post['content']}</p>"
